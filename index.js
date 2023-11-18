@@ -1,5 +1,7 @@
 const express = require("express");
 const dbConnect = require("./config/dbConnect");
+
+//Var for Routes
 const authRoute = require("./routes/authRoute");
 const productRoute = require("./routes/productRoute");
 const blogRoute = require("./routes/blogRoute");

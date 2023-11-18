@@ -31,7 +31,7 @@ app.use(morgan("dev"));
 /* Mongodb Establised Connection*/
 dbConnect();
 
-/*APIs */
+/*APIs Handling */
 app.use("/api/user", authRoute);
 app.use("/api/product", productRoute);
 app.use("/api/blog", blogRoute);

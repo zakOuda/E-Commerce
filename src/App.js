@@ -8,6 +8,7 @@ import MainLayout from "./components/MainLayout";
 import ResetPassword from "./pages/ResetPassword";
 import ForgetPassword from "./pages/ForgetPassword";
 
+//Main App React
 function App() {
   return (
     <div className='App'>

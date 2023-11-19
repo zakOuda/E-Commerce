@@ -24,6 +24,7 @@ import {
 import { FaClipboardList, FaBlog, FaList } from "react-icons/fa";
 import { SiBlogger, SiBloglovin } from "react-icons/si";
 import { TbCategoryFilled, TbCategory2 } from "react-icons/tb";
+import { IoMdNotifications } from "react-icons/io";
 
 import { Outlet, useNavigate } from "react-router-dom";
 
@@ -169,7 +170,12 @@ const MainLayout = () => {
             }}
           />
           <div className='d-flex align-items-center gap-1'>
-            <div></div>
+            <div className=' position-relative'>
+              <IoMdNotifications className='fs-4 m-4' />
+              <span className='position-absolute badge bg-warning rounded-circle'>
+                3
+              </span>
+            </div>
             <div className='d-flex gap-2 align-items-center'>
               <div className=''>
                 <img

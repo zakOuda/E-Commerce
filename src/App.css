@@ -60,7 +60,7 @@ main {
 }
 
 .login:hover {
-  box-shadow: 0 0 30px gray;
+  box-shadow: 0 0 20px gray;
 }
 
 /* DashBoard page  */
@@ -68,6 +68,19 @@ main {
 .dashboard-header .dots {
   color: gray !important;
   font-size: 20px !important;
+}
+.dashboard-header .dots {
+  cursor: pointer;
+}
+.dashboard-header .dots:active {
+  color: white !important;
+  /* padding: 20px; */
+  background-color: gray;
+  border-radius: 3px;
+}
+button:active {
+  color: white !important;
+  background-color: grey !important;
 }
 .dashboard-header .links-compare-year {
   color: gray !important;

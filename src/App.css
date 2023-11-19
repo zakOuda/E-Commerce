@@ -53,25 +53,7 @@ main {
   line-height: 20px !important;
   /* top: 0; */
 }
-/* .ant-layout-sider {
-  max-width: 500px;
-  flex: none;
-}
-.ant-layout-content,
-.ant-layout-header,
-.ant-layout-sider {
-  min-height: 100vb;
-  resize: horizontal;
-  overflow: auto;
-  flex: none;
-} */
 
 .login:hover {
   box-shadow: 0 0 30px gray;
 }
-/* .slider {
-  width: 5px;
-  height: 100vb;
-  background-color: rgb(155, 155, 137);
-  cursor: col-resize;
-} */

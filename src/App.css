@@ -80,4 +80,7 @@ main {
 .dashboard-header .links-compare-percent-fall {
   color: red !important;
 }
+.dashboard-header > div:hover {
+  box-shadow: 0 0 20px grey;
+}
 /* DashBoard Page End here */

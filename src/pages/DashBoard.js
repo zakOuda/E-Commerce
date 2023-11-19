@@ -6,7 +6,7 @@ const DashBoard = () => {
   const [rise, setRise] = useState(true);
   return (
     <div>
-      <div className='dashboard-time-export d-flex justify-content-between align-items-center'>
+      <div className='dashboard-time-export mb-4 d-flex justify-content-between align-items-center'>
         <h1 className='mb-0  pe-3 py-3'>DashBoard</h1>
         <div className='d-flex rounded-3 gap-3'>
           <select className='form-select' aria-label='Default select example'>

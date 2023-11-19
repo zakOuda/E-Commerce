@@ -45,6 +45,7 @@ body {
 }
 main {
   overflow-y: scroll;
+  background-color: transparent !important;
 }
 .links p {
   /* font-size: 12px; */
@@ -61,3 +62,22 @@ main {
 .login:hover {
   box-shadow: 0 0 30px gray;
 }
+
+/* DashBoard page  */
+.dashboard-header > div > div > h4,
+.dashboard-header .dots {
+  color: gray !important;
+  font-size: 20px !important;
+}
+.dashboard-header .links-compare-year {
+  color: gray !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+.dashboard-header .links-compare-percent-rise {
+  color: green !important;
+}
+.dashboard-header .links-compare-percent-fall {
+  color: red !important;
+}
+/* DashBoard Page End here */

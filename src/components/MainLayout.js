@@ -25,7 +25,7 @@ import { FaClipboardList, FaBlog, FaList } from "react-icons/fa";
 import { SiBlogger, SiBloglovin } from "react-icons/si";
 import { TbCategoryFilled, TbCategory2 } from "react-icons/tb";
 
-import { useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 
 const { Header, Sider, Content } = Layout;
 
@@ -154,7 +154,10 @@ const MainLayout = () => {
       </Sider>
       {/* <div className='slider'></div> */}
       <Layout>
-        <Header style={{ padding: 0, background: colorBgContainer }}>
+        <Header
+          className='d-flex justify-content-between pe-5 ps-1'
+          style={{ padding: 0, background: colorBgContainer }}
+        >
           <Button
             type='text'
             icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
@@ -165,6 +168,24 @@ const MainLayout = () => {
               height: 64,
             }}
           />
+          <div className='d-flex align-items-center gap-1'>
+            <div></div>
+            <div className='d-flex gap-2 align-items-center'>
+              <div className=''>
+                <img
+                  // className='img-fluid'
+                  src='https://st.depositphotos.com/1003593/2504/i/450/depositphotos_25042169-stock-photo-customer-concept.jpg'
+                  alt='home'
+                />
+              </div>
+              <div className='d-flex gap-2 flex-column align-items-center  w-100'>
+                <div className='links'>
+                  <h4 className='mb-0 fs-4'>zakaraya oudaimah</h4>
+                  <p className='mb-0'>zakaraya.oudaimah@gmail.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </Header>
         <Content
           style={{
@@ -174,13 +195,7 @@ const MainLayout = () => {
             background: colorBgContainer,
           }}
         >
-          <div className='container-fluid'>
-            <div className='row text-center justify-content-center align-items-center g-2'>
-              <div className='col'>Column</div>
-              <div className='col'>Column</div>
-              <div className='col'>Column</div>
-            </div>
-          </div>
+          <Outlet />
         </Content>
       </Layout>
     </Layout>

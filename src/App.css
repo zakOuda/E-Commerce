@@ -13,9 +13,6 @@ body {
   min-width: 15% !important;
   width: 15% !important;
 }
-aside {
-  position: relative;
-}
 .ant-layout-sider-collapsed {
   flex: 0 0 80px !important;
   max-width: 80px !important;
@@ -50,7 +47,8 @@ aside {
   right: 15px;
 }
 main {
-  /* overflow-y: scroll; */
+  height: 100vh;
+  overflow-y: scroll;
   background-color: transparent !important;
 }
 
@@ -118,6 +116,10 @@ button:active {
 }
 
 .income:hover {
+  box-shadow: 0 0 20px gray;
+}
+
+.table-users:hover {
   box-shadow: 0 0 20px gray;
 }
 /* DashBoard Page End here */

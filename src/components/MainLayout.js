@@ -56,12 +56,7 @@ const MainLayout = () => {
   } = theme.useToken();
   return (
     <Layout>
-      <Sider
-        className='fix-sider'
-        trigger={null}
-        collapsible
-        collapsed={collapsed}
-      >
+      <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className='logo'>
           <h2 className='text-white fs-5 text-center py-3 mb-0'>
             <span className='sm-logo'>DC</span>
@@ -176,9 +171,7 @@ const MainLayout = () => {
           ]}
         />
       </Sider>
-      {/* <div className='slider'></div> */}
       <Layout>
-        {/* <div className='col-3 w-25'>asd</div> */}
         <Header
           className='d-flex justify-content-between pe-5 ps-1'
           style={{ padding: 0, background: colorBgContainer }}

@@ -3,7 +3,30 @@ import { HiDotsVertical } from "react-icons/hi";
 import { AiOutlineRise, AiOutlineFall } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { Column } from "@ant-design/plots";
-
+import { Table } from "antd";
+const columns = [
+  {
+    title: "Name",
+    dataIndex: "name",
+  },
+  {
+    title: "Age",
+    dataIndex: "age",
+  },
+  {
+    title: "Address",
+    dataIndex: "address",
+  },
+];
+const data1 = [];
+for (let i = 0; i < 46; i++) {
+  data1.push({
+    key: i,
+    name: `Edward King ${i}`,
+    age: 32,
+    address: `London, Park Lane no. ${i}`,
+  });
+}
 const DashBoard = () => {
   const [height, setHeight] = useState(0);
   const ref = useRef(null);
@@ -92,7 +115,7 @@ const DashBoard = () => {
   const nav = useNavigate();
   const [rise, setRise] = useState(true);
   return (
-    <div>
+    <>
       <div className='dashboard-time-export mb-4 d-flex justify-content-between align-items-center'>
         <h1 className='mb-0  pe-3 py-3'>DashBoard</h1>
         <div className='d-flex rounded-3 gap-3'>
@@ -220,80 +243,85 @@ const DashBoard = () => {
         </div>
       </div>
 
-      <div>
-        <div className='mb-4'>
-          <h1 className='mb-0 pe-3 py-3'>Incoming</h1>
+      <div className='mb-4'>
+        <h1 className='mb-0 pe-3 py-3'>Incoming</h1>
+      </div>
+      <div className='d-flex gap-4 mb-4 w-100'>
+        <div className='table-high income rounded-3' style={{ width: "40%" }}>
+          <table className='table fs-6' ref={ref}>
+            <thead>
+              <tr>
+                <th scope='col'>URLs</th>
+                <th scope='col'>Users</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mark</td>
+                <td>Otto</td>
+              </tr>
+              <tr>
+                <td>Mark</td>
+                <td>Otto</td>
+              </tr>
+              <tr>
+                <td>Mark</td>
+                <td>Otto</td>
+              </tr>
+              <tr>
+                <td>Mark</td>
+                <td>Otto</td>
+              </tr>
+              <tr>
+                <td>Mark</td>
+                <td>Otto</td>
+              </tr>
+              <tr>
+                <td>Mark</td>
+                <td>Otto</td>
+              </tr>
+              <tr>
+                <td>Mark</td>
+                <td>Otto</td>
+              </tr>
+              <tr>
+                <td>Mark</td>
+                <td>Otto</td>
+              </tr>
+              <tr>
+                <td>Mark</td>
+                <td>Otto</td>
+              </tr>
+              <tr>
+                <td>Mark</td>
+                <td>Otto</td>
+              </tr>
+              <tr>
+                <td>Mark</td>
+                <td>Otto</td>
+              </tr>
+              <tr>
+                <td>Mark</td>
+                <td>Otto</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div className='d-flex gap-4'>
-          <div className='table-high income rounded-3 col-4'>
-            <table className='table fs-6' ref={ref}>
-              <thead>
-                <tr>
-                  <th scope='col'>URLs</th>
-                  <th scope='col'>Users</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                </tr>
-                <tr>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                </tr>
-                <tr>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                </tr>
-                <tr>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                </tr>
-                <tr>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                </tr>
-                <tr>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                </tr>
-                <tr>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                </tr>
-                <tr>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                </tr>
-                <tr>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                </tr>
-                <tr>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                </tr>
-                <tr>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                </tr>
-                <tr>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div className='income rounded-3 col-8'>
-            <Column
-              {...config}
-              style={{ height: `${height}px`, minHeight: "300px" }}
-            />
-          </div>
+        <div className='income rounded-3' style={{ width: "60%" }}>
+          <Column
+            {...config}
+            style={{ height: `${height}px`, minHeight: "300px" }}
+          />
         </div>
       </div>
-    </div>
+
+      <div className='mb-4 '>
+        <h3 className='mb-4'>Recent Order</h3>
+        <div className='table-users rounded-3'>
+          <Table columns={columns} dataSource={data1} />
+        </div>
+      </div>
+    </>
   );
 };
 

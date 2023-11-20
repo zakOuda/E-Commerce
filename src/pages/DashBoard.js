@@ -286,7 +286,6 @@ const DashBoard = () => {
             </table>
           </div>
           <div className='income rounded-3 col-8'>
-            {height}
             <Column
               {...config}
               style={{ height: `${height}px`, minHeight: "300px" }}

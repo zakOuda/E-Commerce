@@ -5,11 +5,12 @@ body {
 .ant-layout {
   min-height: 100vb;
 }
+
 .ant-layout-sider {
-  flex: 0 0 250px !important;
-  max-width: 250px !important;
-  min-width: 250px !important;
-  width: 250px !important;
+  flex: 0 0 15% !important;
+  max-width: 15% !important;
+  min-width: 15% !important;
+  width: 15% !important;
 }
 .ant-layout-sider-collapsed {
   flex: 0 0 80px !important;
@@ -44,9 +45,10 @@ body {
   right: 15px;
 }
 main {
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   background-color: transparent !important;
 }
+
 .links p {
   /* font-size: 12px; */
   line-height: 20px !important;
@@ -62,6 +64,11 @@ main {
 .login:hover {
   box-shadow: 0 0 20px gray;
 }
+/* .fix-sider {
+  overflow-y: scroll;
+  position: fixed !important;
+  height: 100vb;
+} */
 
 /* DashBoard page  */
 .dashboard-header > div > div > h4,

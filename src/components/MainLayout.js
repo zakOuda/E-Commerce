@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -31,6 +31,24 @@ import { Outlet, useNavigate } from "react-router-dom";
 const { Header, Sider, Content } = Layout;
 
 const MainLayout = () => {
+  /* const div = useRef(null);
+  useLayoutEffect(() => {
+    console.log(div);
+    const divAnimate = div.current.getBoundingClientRect().top;
+    console.log(divAnimate);
+    const onScroll = () => {
+      if (divAnimate <= window.scrollY) {
+        console.log("ok");
+        div.current.style.position = "fixed";
+        div.current.style.top = 0;
+        div.current.style.left = 0;
+      } else {
+        div.current.style.position = "relative";
+      }
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []); */
   const navigate = useNavigate();
   const [collapsed, setCollapsed] = useState(false);
   const {
@@ -38,7 +56,12 @@ const MainLayout = () => {
   } = theme.useToken();
   return (
     <Layout>
-      <Sider trigger={null} collapsible collapsed={collapsed}>
+      <Sider
+        className='fix-sider'
+        trigger={null}
+        collapsible
+        collapsed={collapsed}
+      >
         <div className='logo'>
           <h2 className='text-white fs-5 text-center py-3 mb-0'>
             <span className='sm-logo'>DC</span>
@@ -155,6 +178,7 @@ const MainLayout = () => {
       </Sider>
       {/* <div className='slider'></div> */}
       <Layout>
+        {/* <div className='col-3 w-25'>asd</div> */}
         <Header
           className='d-flex justify-content-between pe-5 ps-1'
           style={{ padding: 0, background: colorBgContainer }}

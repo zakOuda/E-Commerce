@@ -4,6 +4,7 @@ body {
 }
 .ant-layout {
   min-height: 100vb;
+  /* position: relative; */
 }
 
 .ant-layout-sider {
@@ -12,12 +13,16 @@ body {
   min-width: 15% !important;
   width: 15% !important;
 }
+aside {
+  position: relative;
+}
 .ant-layout-sider-collapsed {
   flex: 0 0 80px !important;
   max-width: 80px !important;
   min-width: 80px !important;
   width: 80px !important;
 }
+
 .logo {
   background-color: #ffd333;
   height: 64px;

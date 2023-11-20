@@ -18,9 +18,9 @@ const Login = () => {
           <p className='text-center'>Login to your account to continue</p>
           <form
             // action='submit'
-            onClick={(e) => {
+            onSubmit={(e) => {
               e.preventDefault();
-              // console.log("true");
+              console.log("true");
               navigate("/admin");
               // console.log("true");
               // setError(false);
@@ -59,14 +59,14 @@ const Login = () => {
                 </p>
               </div>
             </div>
-            <Link
+            <button
               // to={`/admin`}
               type='submit'
               style={{ background: "#ffd333" }}
               className='btn py-3 btn-primary border-0 w-100'
             >
               Login
-            </Link>
+            </button>
           </form>
         </div>
         {/* <div

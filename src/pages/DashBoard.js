@@ -1,9 +1,94 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { HiDotsVertical } from "react-icons/hi";
 import { AiOutlineRise, AiOutlineFall } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import { Column } from "@ant-design/plots";
 
 const DashBoard = () => {
+  const [height, setHeight] = useState(0);
+  const ref = useRef(null);
+  useEffect(() => {
+    setHeight(ref.current.clientHeight);
+  }, []);
+  const data = [
+    {
+      type: "Jan",
+      sales: 38,
+    },
+    {
+      type: "Feb",
+      sales: 52,
+    },
+    {
+      type: "Mar",
+      sales: 61,
+    },
+    {
+      type: "Apr",
+      sales: 145,
+    },
+    {
+      type: "May",
+      sales: 48,
+    },
+    {
+      type: "Jun",
+      sales: 38,
+    },
+    {
+      type: "Jul",
+      sales: 38,
+    },
+    {
+      type: "Aug",
+      sales: 38,
+    },
+    {
+      type: "Sep",
+      sales: 100,
+    },
+    {
+      type: "Oct",
+      sales: 30,
+    },
+    {
+      type: "Nov",
+      sales: 200,
+    },
+    {
+      type: "Dec",
+      sales: 50,
+    },
+  ];
+  const config = {
+    data,
+    xField: "type",
+    yField: "sales",
+    color: ({ type }) => {
+      return "#ffd333";
+    },
+    label: {
+      position: "middle",
+      style: {
+        fill: "#FFFFFF",
+        opacity: 1,
+      },
+    },
+    xAxis: {
+      label: {
+        autoHide: true,
+        autoRotate: false,
+      },
+    },
+    meta: {
+      type: {
+        alias: "Month",
+      },
+      sales: {
+        alias: "Income",
+      },
+    },
+  };
   const nav = useNavigate();
   const [rise, setRise] = useState(true);
   return (
@@ -34,7 +119,7 @@ const DashBoard = () => {
         </div>
       </div>
 
-      <div className='dashboard-header d-flex justify-content-between align-items-center gap-3'>
+      <div className='dashboard-header d-flex justify-content-between align-items-center gap-3 mb-4'>
         <div className='d-flex flex-column w-100 bg-white p-4 rounded-3'>
           <div className='d-flex w-100 justify-content-between align-items-center'>
             <h4>Total sells</h4>
@@ -131,6 +216,81 @@ const DashBoard = () => {
                 <p className='links-compare-year'>compared to Apr 2022</p>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div className='mb-4'>
+          <h1 className='mb-0 pe-3 py-3'>Incoming</h1>
+        </div>
+        <div className='d-flex gap-4'>
+          <div className='table-high income rounded-3 col-4'>
+            <table className='table fs-6' ref={ref}>
+              <thead>
+                <tr>
+                  <th scope='col'>URLs</th>
+                  <th scope='col'>Users</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                </tr>
+                <tr>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                </tr>
+                <tr>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                </tr>
+                <tr>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                </tr>
+                <tr>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                </tr>
+                <tr>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                </tr>
+                <tr>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                </tr>
+                <tr>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                </tr>
+                <tr>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                </tr>
+                <tr>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                </tr>
+                <tr>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                </tr>
+                <tr>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className='income rounded-3 col-8'>
+            {height}
+            <Column
+              {...config}
+              style={{ height: `${height}px`, minHeight: "300px" }}
+            />
           </div>
         </div>
       </div>

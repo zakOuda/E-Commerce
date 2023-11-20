@@ -15,7 +15,7 @@ const ForgetPassword = () => {
             Please inter your register email to reset your password
           </p>
           <form
-            action='submit'
+            // action='submit'
             onSubmit={(e) => {
               e.preventDefault();
             }}
